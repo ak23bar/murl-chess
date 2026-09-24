@@ -1,0 +1,5 @@
+For the initial position, MinMax visited 21, 421, 9,323, and 206,604 nodes at depths one through four. The last step multiplied nodes by 22.16 and median runtime by 23.12. This is the practical consequence of an expanding reply tree.
+
+Increasing MCTS from 100 to 400 iterations multiplied median time by between 3.03 and 5.99 across these positions. Approximately linear budget scaling is a useful expectation, not an exact law from two points. Across all MCTS calls, 11,653 of 12,000 simulations (97.1\%) stopped at the rollout cap, showing how strongly this experiment depends on heuristic evaluation.
+
+Timing variation was substantial in some conditions: mixed-position depth three ranged from 3.528 to 9.261 seconds despite identical node counts. System load or frequency variation is a plausible explanation, not a measured diagnosis. Medians reduce sensitivity to a single slow run; the ranges remain part of the evidence.

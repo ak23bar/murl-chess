@@ -1,0 +1,10 @@
+{
+  "pages": 9,
+  "main_report_pages": 7,
+  "compiled_with": "Tectonic 0.17.0; BibTeX",
+  "visual_review": "All nine pages rendered and visually reviewed; no clipping or overlap",
+  "unresolved_citations": false,
+  "figures": 3,
+  "behavioral_tests_passed": 11,
+  "result_integrity_checks_passed": 11172
+}

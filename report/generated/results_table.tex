@@ -1,0 +1,20 @@
+\begin{center}\small
+\setlength{\tabcolsep}{7pt}
+\begin{tabular}{lrrrrr}
+\toprule
+ & \multicolumn{3}{c}{MinMax depth} & \multicolumn{2}{c}{MCTS iterations} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-6}
+ID & 2 & 3 & 4 & 100 & 400 \\
+\midrule
+R4 & 0.017 & 0.217 & 4.017 & 0.196 & 0.878 \\
+R7 & 0.013 & 0.281 & 5.096 & 0.210 & 0.839 \\
+R11 & 0.012 & 0.227 & 3.647 & 0.213 & 0.860 \\
+P16 & 0.007 & 0.087 & 1.098 & 0.195 & 1.110 \\
+M16 & 0.076 & 3.586 & \textit{TO} & 0.265 & 1.580 \\
+M24 & 0.067 & 1.756 & \textit{TO} & 0.315 & 1.142 \\
+S32 & 0.015 & 0.268 & 6.194 & 0.267 & 1.596 \\
+I32 & 0.035 & 1.141 & \textit{TO} & 0.418 & 1.265 \\
+\bottomrule
+\end{tabular}
+\end{center}
+{\small\textbf{Table 1.} Median elapsed seconds across three runs per condition. TO means all three searches reached the fifteen-second deadline before completing the requested depth. Timeout durations are censored observations, not full-depth runtimes. Depth-one results and all individual runs remain in the raw CSV.}

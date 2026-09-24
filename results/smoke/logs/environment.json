@@ -1,0 +1,142 @@
+{
+  "started_utc": "2026-09-24T01:22:55.459632+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\akbar\\.codex\\.chatgpt-projects\\g-p-6aa5897c8d488191864d3b3e8516fc26\\murl-chess\\.venv\\Scripts\\python.exe",
+  "operating_system": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+  "cpu_model": "AMD Ryzen 7 7730U with Radeon Graphics",
+  "processor_identifier": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+  "logical_cpu_count": 16,
+  "packages": {
+    "python-chess": "1.999",
+    "chess": "1.11.2",
+    "matplotlib": "3.10.8",
+    "numpy": "2.5.3"
+  },
+  "timer": "time.perf_counter; external elapsed wall-clock seconds around each search call",
+  "timer_resolution_seconds": 1e-07,
+  "timing_includes": "Search, algorithm input-validity guard, board copies made inside algorithm, move generation, terminal detection, evaluation",
+  "timing_excludes": "Imports, fixture construction and pre-search fixture validation, output formatting, CSV/JSON writes, warm-up",
+  "claim_draw": false,
+  "command": [
+    "C:\\Users\\akbar\\.codex\\.chatgpt-projects\\g-p-6aa5897c8d488191864d3b3e8516fc26\\murl-chess\\.venv\\Scripts\\python.exe",
+    "-m",
+    "experiments.search_baseline.benchmark",
+    "--quick"
+  ],
+  "parameters": {
+    "quick": true,
+    "depths": [
+      1,
+      2
+    ],
+    "mcts_budgets": [
+      10
+    ],
+    "repetitions": 1,
+    "rollout_plies": 40,
+    "time_limit": 15.0,
+    "schedule_seed": 20260923,
+    "positions": null,
+    "output_dir": null
+  },
+  "warmup": "One unrecorded MinMax depth-1 call and one unrecorded MCTS 2-iteration call on first position",
+  "schedule": "All conditions and repetitions shuffled with independent schedule_seed",
+  "summary_policy": "Median/min/max among completed searches only; incomplete rows retained and counted",
+  "node_count_semantics": {
+    "minimax": "Root plus all entered recursive nodes",
+    "mcts": "Allocated tree nodes including root; excludes rollout positions"
+  },
+  "seed_policy": "MCTS repetition r uses seed r-1; timing spread includes random rollout-path variation",
+  "rollout_plies_semantics": "Sum of rollout plies in completed MCTS simulations only",
+  "code_sha256": {
+    "src/__init__.py": "61d81fd9c1cc08f8ec1d930e56dcde5d40bcf6323d915a6e0a70b9323119a09f",
+    "src/evaluation.py": "4111d08a99136c42829c39f9d68f30f58ab9792c1d84f40de59933cd366772da",
+    "src/mcts.py": "85458de8d96c48864eb5f957a698f2077b185ccf0086f063b7e7661df20d471b",
+    "src/minimax.py": "865696650eb6e5e42694e26a946e5b08d6c6dfc996bda37a3a5323c5cb46c856",
+    "experiments/search_baseline/__init__.py": "3e6f0bee2257979f3989913003e6e2f2a74fdfa6380d6e487f7c4449291aed41",
+    "experiments/search_baseline/benchmark.py": "488081c56831207909a67dd78a1393d4c72f7fa95d2d78f5ee0b0727137af9b2",
+    "experiments/search_baseline/positions.py": "adb6b18f7b0eeed16b79ce8d68cd7301f2a8171b317ee018ef7b5f586543bb14"
+  },
+  "positions": [
+    {
+      "position_id": "rook_04",
+      "label": "Four-piece rook ending",
+      "fen": "8/5k2/6r1/8/8/1R6/2K5/8 w - - 0 1",
+      "piece_count": 4,
+      "legal_moves_at_root": 21,
+      "rationale": "Very low material with long-range rook moves; sparse need not mean immobile.",
+      "provenance": "Constructed control for this experiment"
+    },
+    {
+      "position_id": "rook_pawns_07",
+      "label": "Seven-piece rook ending",
+      "fen": "8/5pk1/6p1/8/2P5/2K5/1R6/6r1 w - - 0 1",
+      "piece_count": 7,
+      "legal_moves_at_root": 21,
+      "rationale": "Adds asymmetric pawn material to two kings and two rooks.",
+      "provenance": "Constructed control for this experiment"
+    },
+    {
+      "position_id": "rook_pawns_11",
+      "label": "Eleven-piece rook ending",
+      "fen": "8/4rpk1/5pp1/8/2P1P3/P1K2P2/1R6/8 w - - 0 1",
+      "piece_count": 11,
+      "legal_moves_at_root": 24,
+      "rationale": "Larger pawn population changes mobility and captures without adding minor pieces.",
+      "provenance": "Constructed control for this experiment"
+    },
+    {
+      "position_id": "pawns_16",
+      "label": "Sixteen-piece pawn blockade",
+      "fen": "6k1/8/8/pppppp1p/PPPPPP1P/8/8/6K1 w - - 0 1",
+      "piece_count": 16,
+      "legal_moves_at_root": 15,
+      "rationale": "Paired material count with mixed_16; blocked pawn advances but captures remain legal.",
+      "provenance": "Constructed control for this experiment"
+    },
+    {
+      "position_id": "mixed_16",
+      "label": "Sixteen-piece mixed position",
+      "fen": "r3k3/1p2bpp1/2n5/3q4/3Q4/2N5/1P2BPP1/R3K3 w - - 0 1",
+      "piece_count": 16,
+      "legal_moves_at_root": 53,
+      "rationale": "Same piece count as pawns_16, with queens, rooks and minor pieces increasing mobility.",
+      "provenance": "Constructed control for this experiment"
+    },
+    {
+      "position_id": "middlegame_24",
+      "label": "Reduced middlegame",
+      "fen": "r2q1rk1/ppp2ppp/2nb4/8/3P4/2NB4/PP3PPP/R2Q1RK1 w - - 0 1",
+      "piece_count": 24,
+      "legal_moves_at_root": 42,
+      "rationale": "Developed pieces and castled kings with some central material removed.",
+      "provenance": "Constructed control for this experiment"
+    },
+    {
+      "position_id": "initial_32",
+      "label": "Initial position",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "piece_count": 32,
+      "legal_moves_at_root": 20,
+      "rationale": "Full material with initially restricted mobility; paired with italian_32.",
+      "provenance": "Standard chess starting position"
+    },
+    {
+      "position_id": "italian_32",
+      "label": "Italian development",
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "piece_count": 32,
+      "legal_moves_at_root": 33,
+      "rationale": "Full material after development; isolates mobility changes without captures.",
+      "provenance": "Legal sequence: 1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5"
+    }
+  ],
+  "ended_utc": "2026-09-24T01:22:56.467582+00:00",
+  "benchmark_elapsed_seconds": 0.7792951999999786,
+  "raw_rows": 24,
+  "completed_rows": 24,
+  "timeout_rows": 0,
+  "error_rows": 0
+}
