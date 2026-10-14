@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "name": "Immortal Game",
+    "page": 1,
+    "white": "Ke2 Qf3 Bd6 Nd5 Nf5 Pa2 Pc2 Pd3 Pe5 Pg4 Ph5",
+    "black": "ke8 qa1 ra8 rh8 bc8 bg1 na6 ng8 pa7 pb5 pd7 pf7 pg7 ph7",
+    "fen": "r1b1k1nr/p2p1ppp/n2B4/1p1NPN1P/6P1/3P1Q2/P1P1K3/q5b1 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 2,
+    "name": "Evergreen Game",
+    "page": 1,
+    "white": "Kg1 Rd1 Ba3 Bd3 Pa2 Pc3 Pf2 Pf6 Pg2 Ph2",
+    "black": "kd7 qf3 rb8 rg8 bb7 bb6 ne7 pa7 pc7 pf7 ph7",
+    "fen": "1r4r1/pbpknp1p/1b3P2/8/8/B1PB1q2/P4PPP/3R2K1 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 3,
+    "name": "Game of the Century",
+    "page": 1,
+    "white": "Kc1 Qb8 Ne5 Pg2 Ph4",
+    "black": "kg7 ra2 bb4 bb3 ng3 pb5 pc6 pf7 pg6 ph5",
+    "fen": "1Q6/5pk1/2p3p1/1p2N2p/1b5P/1b4n1/r5P1/2K5 b - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 4,
+    "name": "Reti Mate",
+    "page": 1,
+    "white": "Kc1 Qd3 Rd1 Rh1 Bd2 Bf1 Ng1 Pa2 Pb2 Pc2 Pf2 Pg2 Ph2",
+    "black": "ke8 qe5 ra8 rh8 bc8 bf8 nb8 ne4 pa7 pb7 pc6 pf7 pg7 ph7",
+    "fen": "rnb1kb1r/pp3ppp/2p5/4q3/4n3/3Q4/PPPB1PPP/2KR1BNR w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 5,
+    "name": "Loyd Charles XII",
+    "page": 2,
+    "white": "Kf5 Rg7 Ne1 Pg2 Ph2",
+    "black": "kh5 bf2 pg3 ph6",
+    "fen": "8/6R1/7p/5K1k/8/6p1/5bPP/4N3 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 6,
+    "name": "Back-Rank Queen Sacrifices",
+    "page": 2,
+    "white": "Kg1 Qd7 Ph2",
+    "black": "kh8 re6 rd2 pg7 ph7",
+    "fen": "7k/3Q2pp/4r3/8/8/8/3r3P/6K1 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 7,
+    "name": "Back-Rank Quiet Knight",
+    "page": 2,
+    "white": "Kh1 Qd3 Re1 Nh3",
+    "black": "kh8 rg8 pg7 ph7",
+    "fen": "6rk/6pp/8/8/8/3Q3N/8/4R2K w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 8,
+    "name": "Queen Sacrifice Knight Support",
+    "page": 2,
+    "white": "Kc1 Qf7 Rf2 Nc8",
+    "black": "kh8 rg8 pg7 ph7",
+    "fen": "2N3rk/5Qpp/8/8/8/8/5R2/2K5 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 9,
+    "name": "Rook Sacrifice Long Diagonal",
+    "page": 2,
+    "white": "Kg1 Qh6 Rb8 Nd7",
+    "black": "kh8 rg8 pg7 ph7",
+    "fen": "1R4rk/3N2pp/7Q/8/8/8/8/6K1 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 10,
+    "name": "Rook Sacrifice Queen Knight",
+    "page": 2,
+    "white": "Kb1 Qd6 Re8 Nf5",
+    "black": "kh7 pc4 pg7 ph2",
+    "fen": "4R3/6pk/3Q4/5N2/2p5/8/7p/1K6 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 11,
+    "name": "Anastasia Mate",
+    "page": 3,
+    "white": "Kg1 Qe5 Rd4 Nc8 Pf2 Pg2",
+    "black": "kg8 qb4 rb8 pf7 pg7",
+    "fen": "1rN3k1/5pp1/8/4Q3/1q1R4/8/5PP1/6K1 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 12,
+    "name": "Arabian Mate",
+    "page": 3,
+    "white": "Ka1 Qa7 Rf7 Ng8",
+    "black": "kh7 ng3 pg7",
+    "fen": "6N1/Q4Rpk/8/8/8/6n1/8/K7 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 13,
+    "name": "Arabian Rook Lift",
+    "page": 3,
+    "white": "Ke1 Rd7 Ne4",
+    "black": "kh8 nc8 nd1 pd6",
+    "fen": "2n4k/3R4/3p4/8/4N3/8/8/3nK3 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 14,
+    "name": "Smothered Mate",
+    "page": 3,
+    "white": "Kg1 Qe5 Nb5 Ph6",
+    "black": "kh8 rg8 bh4 pg7 ph7 pg4",
+    "fen": "6rk/6pp/7P/1N2Q3/6pb/8/8/6K1 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 15,
+    "name": "Double-Check Mate",
+    "page": 3,
+    "white": "Kg1 Qf5 Ra3 Bd8 Pf2 Pg2 Ph2",
+    "black": "kg8 ra8 pf7 pg7 ph7",
+    "fen": "r2B2k1/5ppp/8/5Q2/8/R7/5PPP/6K1 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 16,
+    "name": "Promotion Mate",
+    "page": 3,
+    "white": "Kg3 Rf1 Pb7",
+    "black": "kh8 pg6",
+    "fen": "7k/1P6/6p1/8/8/6K1/8/5R2 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 17,
+    "name": "Double Promotion",
+    "page": 4,
+    "white": "Kg2 Rf6 Pa7 Pd7",
+    "black": "kg8 bg5",
+    "fen": "6k1/P2P4/5R2/6b1/8/8/6K1/8 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 18,
+    "name": "Under-Promotion Rook",
+    "page": 4,
+    "white": "Ka1 Rg1 Nd8 Pc7",
+    "black": "ke8 bg7",
+    "fen": "3Nk3/2P3b1/8/8/8/8/8/K5R1 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 19,
+    "name": "Under-Promotion Bishop",
+    "page": 4,
+    "white": "Kf3 Qc4 Pd6 Ph7",
+    "black": "kg7 na7",
+    "fen": "8/n5kP/3P4/8/2Q5/5K2/8/8 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  },
+  {
+    "id": 20,
+    "name": "Promotion Sacrifice Queen Pawn",
+    "page": 4,
+    "white": "Kg3 Ra6 Pc7 Ph6",
+    "black": "kh8 ba7 nd7",
+    "fen": "7k/b1Pn4/R6P/8/8/6K1/8/8 w - - 0 1",
+    "valid": true,
+    "validity_status": 0
+  }
+]

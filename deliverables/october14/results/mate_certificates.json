@@ -1,0 +1,1575 @@
+[
+  {
+    "id": 1,
+    "fen": "r1b1k1nr/p2p1ppp/n2B4/1p1NPN1P/6P1/3P1Q2/P1P1K3/q5b1 w - - 0 1",
+    "proof": {
+      "moves": {
+        "f5g7": {
+          "moves": {
+            "e8d8": {
+              "moves": {
+                "f3f6": {
+                  "moves": {
+                    "g8e7": {
+                      "moves": {
+                        "f6e7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g8f6": {
+                      "moves": {
+                        "d6e7": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "f5g7",
+      "e8d8",
+      "f3f6",
+      "g8e7",
+      "f6e7"
+    ],
+    "longest_example_san": [
+      "Nxg7+",
+      "Kd8",
+      "Qf6+",
+      "Ne7",
+      "Qxe7#"
+    ]
+  },
+  {
+    "id": 2,
+    "fen": "1r4r1/pbpknp1p/1b3P2/8/8/B1PB1q2/P4PPP/3R2K1 w - - 0 1",
+    "proof": {
+      "moves": {
+        "d3f5": {
+          "moves": {
+            "d7e8": {
+              "moves": {
+                "f5d7": {
+                  "moves": {
+                    "e8f8": {
+                      "moves": {
+                        "a3e7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "e8d8": {
+                      "moves": {
+                        "a3e7": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "d7c6": {
+              "moves": {
+                "f5d7": {
+                  "mate": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "d3f5",
+      "d7e8",
+      "f5d7",
+      "e8f8",
+      "a3e7"
+    ],
+    "longest_example_san": [
+      "Bf5+",
+      "Ke8",
+      "Bd7+",
+      "Kf8",
+      "Bxe7#"
+    ]
+  },
+  {
+    "id": 3,
+    "fen": "1Q6/5pk1/2p3p1/1p2N2p/1b5P/1b4n1/r5P1/2K5 b - - 0 1",
+    "proof": {
+      "moves": {
+        "g3e2": {
+          "moves": {
+            "c1b1": {
+              "moves": {
+                "e2c3": {
+                  "moves": {
+                    "b1c1": {
+                      "moves": {
+                        "b4a3": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "g3e2",
+      "c1b1",
+      "e2c3",
+      "b1c1",
+      "b4a3"
+    ],
+    "longest_example_san": [
+      "Ne2+",
+      "Kb1",
+      "Nc3+",
+      "Kc1",
+      "Ba3#"
+    ]
+  },
+  {
+    "id": 4,
+    "fen": "rnb1kb1r/pp3ppp/2p5/4q3/4n3/3Q4/PPPB1PPP/2KR1BNR w - - 0 1",
+    "proof": {
+      "moves": {
+        "d3d8": {
+          "moves": {
+            "e8d8": {
+              "moves": {
+                "d2g5": {
+                  "moves": {
+                    "d8e8": {
+                      "moves": {
+                        "d1d8": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "d8c7": {
+                      "moves": {
+                        "g5d8": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "d3d8",
+      "e8d8",
+      "d2g5",
+      "d8e8",
+      "d1d8"
+    ],
+    "longest_example_san": [
+      "Qd8+",
+      "Kxd8",
+      "Bg5+",
+      "Ke8",
+      "Rd8#"
+    ]
+  },
+  {
+    "id": 5,
+    "fen": "8/6R1/7p/5K1k/8/6p1/5bPP/4N3 w - - 0 1",
+    "proof": {
+      "moves": {
+        "g7g3": {
+          "moves": {
+            "h5h4": {
+              "moves": {
+                "g3h3": {
+                  "mate": true
+                }
+              }
+            },
+            "f2a7": {
+              "moves": {
+                "g3h3": {
+                  "mate": true
+                }
+              }
+            },
+            "f2b6": {
+              "moves": {
+                "g3h3": {
+                  "mate": true
+                }
+              }
+            },
+            "f2c5": {
+              "moves": {
+                "g3h3": {
+                  "mate": true
+                }
+              }
+            },
+            "f2d4": {
+              "moves": {
+                "g3h3": {
+                  "mate": true
+                }
+              }
+            },
+            "f2g3": {
+              "moves": {
+                "e1f3": {
+                  "moves": {
+                    "g3b8": {
+                      "moves": {
+                        "g2g4": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g3c7": {
+                      "moves": {
+                        "g2g4": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g3d6": {
+                      "moves": {
+                        "g2g4": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g3e5": {
+                      "moves": {
+                        "g2g4": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g3h4": {
+                      "moves": {
+                        "g2g4": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g3f4": {
+                      "moves": {
+                        "g2g4": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g3h2": {
+                      "moves": {
+                        "g2g4": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g3f2": {
+                      "moves": {
+                        "g2g4": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g3e1": {
+                      "moves": {
+                        "g2g4": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "f2e3": {
+              "moves": {
+                "g3h3": {
+                  "mate": true
+                }
+              }
+            },
+            "f2g1": {
+              "moves": {
+                "g3h3": {
+                  "mate": true
+                }
+              }
+            },
+            "f2e1": {
+              "moves": {
+                "g3h3": {
+                  "moves": {
+                    "e1h4": {
+                      "moves": {
+                        "g2g4": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "g7g3",
+      "f2g3",
+      "e1f3",
+      "g3b8",
+      "g2g4"
+    ],
+    "longest_example_san": [
+      "Rxg3",
+      "Bxg3",
+      "Nf3",
+      "Bb8",
+      "g4#"
+    ]
+  },
+  {
+    "id": 6,
+    "fen": "7k/3Q2pp/4r3/8/8/8/3r3P/6K1 w - - 0 1",
+    "proof": {
+      "moves": {
+        "d7c8": {
+          "moves": {
+            "e6e8": {
+              "moves": {
+                "c8e8": {
+                  "mate": true
+                }
+              }
+            },
+            "d2d8": {
+              "moves": {
+                "c8d8": {
+                  "moves": {
+                    "e6e8": {
+                      "moves": {
+                        "d8e8": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "d7c8",
+      "d2d8",
+      "c8d8",
+      "e6e8",
+      "d8e8"
+    ],
+    "longest_example_san": [
+      "Qc8+",
+      "Rd8",
+      "Qxd8+",
+      "Re8",
+      "Qxe8#"
+    ]
+  },
+  {
+    "id": 7,
+    "fen": "6rk/6pp/8/8/8/3Q3N/8/4R2K w - - 0 1",
+    "proof": {
+      "moves": {
+        "h3g5": {
+          "moves": {
+            "g8f8": {
+              "moves": {
+                "d3h7": {
+                  "mate": true
+                }
+              }
+            },
+            "g8e8": {
+              "moves": {
+                "d3h7": {
+                  "mate": true
+                }
+              }
+            },
+            "g8d8": {
+              "moves": {
+                "d3d8": {
+                  "mate": true
+                }
+              }
+            },
+            "g8c8": {
+              "moves": {
+                "d3h7": {
+                  "mate": true
+                }
+              }
+            },
+            "g8b8": {
+              "moves": {
+                "d3h7": {
+                  "mate": true
+                }
+              }
+            },
+            "g8a8": {
+              "moves": {
+                "d3h7": {
+                  "mate": true
+                }
+              }
+            },
+            "h7h6": {
+              "moves": {
+                "g5f7": {
+                  "mate": true
+                }
+              }
+            },
+            "g7g6": {
+              "moves": {
+                "d3d4": {
+                  "moves": {
+                    "g8g7": {
+                      "moves": {
+                        "e1e8": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "h7h5": {
+              "moves": {
+                "g5f7": {
+                  "mate": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "h3g5",
+      "g7g6",
+      "d3d4",
+      "g8g7",
+      "e1e8"
+    ],
+    "longest_example_san": [
+      "Ng5",
+      "g6",
+      "Qd4+",
+      "Rg7",
+      "Re8#"
+    ]
+  },
+  {
+    "id": 8,
+    "fen": "2N3rk/5Qpp/8/8/8/8/5R2/2K5 w - - 0 1",
+    "proof": {
+      "moves": {
+        "f7g8": {
+          "moves": {
+            "h8g8": {
+              "moves": {
+                "c8e7": {
+                  "moves": {
+                    "g8h8": {
+                      "moves": {
+                        "f2f8": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "f7g8",
+      "h8g8",
+      "c8e7",
+      "g8h8",
+      "f2f8"
+    ],
+    "longest_example_san": [
+      "Qxg8+",
+      "Kxg8",
+      "Ne7+",
+      "Kh8",
+      "Rf8#"
+    ]
+  },
+  {
+    "id": 9,
+    "fen": "1R4rk/3N2pp/7Q/8/8/8/8/6K1 w - - 0 1",
+    "proof": {
+      "moves": {
+        "b8g8": {
+          "moves": {
+            "h8g8": {
+              "moves": {
+                "h6e6": {
+                  "moves": {
+                    "g8h8": {
+                      "moves": {
+                        "e6e8": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "b8g8",
+      "h8g8",
+      "h6e6",
+      "g8h8",
+      "e6e8"
+    ],
+    "longest_example_san": [
+      "Rxg8+",
+      "Kxg8",
+      "Qe6+",
+      "Kh8",
+      "Qe8#"
+    ]
+  },
+  {
+    "id": 10,
+    "fen": "4R3/6pk/3Q4/5N2/2p5/8/7p/1K6 w - - 0 1",
+    "proof": {
+      "moves": {
+        "e8h8": {
+          "moves": {
+            "h7h8": {
+              "moves": {
+                "d6f8": {
+                  "moves": {
+                    "h8h7": {
+                      "moves": {
+                        "f8g7": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "e8h8",
+      "h7h8",
+      "d6f8",
+      "h8h7",
+      "f8g7"
+    ],
+    "longest_example_san": [
+      "Rh8+",
+      "Kxh8",
+      "Qf8+",
+      "Kh7",
+      "Qxg7#"
+    ]
+  },
+  {
+    "id": 11,
+    "fen": "1rN3k1/5pp1/8/4Q3/1q1R4/8/5PP1/6K1 w - - 0 1",
+    "proof": {
+      "moves": {
+        "d4d8": {
+          "moves": {
+            "g8h7": {
+              "moves": {
+                "e5h5": {
+                  "mate": true
+                }
+              }
+            },
+            "b4f8": {
+              "moves": {
+                "c8e7": {
+                  "moves": {
+                    "g8h8": {
+                      "moves": {
+                        "e5h5": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g8h7": {
+                      "moves": {
+                        "e5h5": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "d4d8",
+      "b4f8",
+      "c8e7",
+      "g8h8",
+      "e5h5"
+    ],
+    "longest_example_san": [
+      "Rd8+",
+      "Qf8",
+      "Ne7+",
+      "Kh8",
+      "Qh5#"
+    ]
+  },
+  {
+    "id": 12,
+    "fen": "6N1/Q4Rpk/8/8/8/6n1/8/K7 w - - 0 1",
+    "proof": {
+      "moves": {
+        "f7g7": {
+          "moves": {
+            "h7h8": {
+              "moves": {
+                "g8h6": {
+                  "moves": {
+                    "g3h5": {
+                      "moves": {
+                        "g7g8": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g3f5": {
+                      "moves": {
+                        "g7g8": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g3e4": {
+                      "moves": {
+                        "g7g8": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g3e2": {
+                      "moves": {
+                        "g7g8": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g3h1": {
+                      "moves": {
+                        "g7g8": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g3f1": {
+                      "moves": {
+                        "g7g8": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "f7g7",
+      "h7h8",
+      "g8h6",
+      "g3h5",
+      "g7g8"
+    ],
+    "longest_example_san": [
+      "Rxg7+",
+      "Kh8",
+      "Nh6",
+      "Nh5",
+      "Rg8#"
+    ]
+  },
+  {
+    "id": 13,
+    "fen": "2n4k/3R4/3p4/8/4N3/8/8/3nK3 w - - 0 1",
+    "proof": {
+      "moves": {
+        "e4f6": {
+          "moves": {
+            "c8e7": {
+              "moves": {
+                "d7e7": {
+                  "moves": {
+                    "d1e3": {
+                      "moves": {
+                        "e7h7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "d1c3": {
+                      "moves": {
+                        "e7h7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "d1f2": {
+                      "moves": {
+                        "e7h7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "d1b2": {
+                      "moves": {
+                        "e7h7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "d6d5": {
+                      "moves": {
+                        "e7h7": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "c8a7": {
+              "moves": {
+                "d7h7": {
+                  "mate": true
+                }
+              }
+            },
+            "c8b6": {
+              "moves": {
+                "d7h7": {
+                  "mate": true
+                }
+              }
+            },
+            "d1e3": {
+              "moves": {
+                "d7h7": {
+                  "mate": true
+                }
+              }
+            },
+            "d1c3": {
+              "moves": {
+                "d7h7": {
+                  "mate": true
+                }
+              }
+            },
+            "d1f2": {
+              "moves": {
+                "d7h7": {
+                  "mate": true
+                }
+              }
+            },
+            "d1b2": {
+              "moves": {
+                "d7h7": {
+                  "mate": true
+                }
+              }
+            },
+            "d6d5": {
+              "moves": {
+                "d7h7": {
+                  "mate": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "e4f6",
+      "c8e7",
+      "d7e7",
+      "d1e3",
+      "e7h7"
+    ],
+    "longest_example_san": [
+      "Nf6",
+      "Ne7",
+      "Rxe7",
+      "Ne3",
+      "Rh7#"
+    ]
+  },
+  {
+    "id": 14,
+    "fen": "6rk/6pp/7P/1N2Q3/6pb/8/8/6K1 w - - 0 1",
+    "proof": {
+      "moves": {
+        "b5d6": {
+          "moves": {
+            "g8f8": {
+              "moves": {
+                "e5g7": {
+                  "mate": true
+                }
+              }
+            },
+            "g8e8": {
+              "moves": {
+                "d6f7": {
+                  "moves": {
+                    "h8g8": {
+                      "moves": {
+                        "e5e8": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g8d8": {
+              "moves": {
+                "d6f7": {
+                  "moves": {
+                    "h8g8": {
+                      "moves": {
+                        "e5g7": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g8c8": {
+              "moves": {
+                "d6f7": {
+                  "moves": {
+                    "h8g8": {
+                      "moves": {
+                        "e5g7": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g8b8": {
+              "moves": {
+                "d6f7": {
+                  "moves": {
+                    "h8g8": {
+                      "moves": {
+                        "e5g7": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g8a8": {
+              "moves": {
+                "d6f7": {
+                  "moves": {
+                    "h8g8": {
+                      "moves": {
+                        "e5g7": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "h4d8": {
+              "moves": {
+                "d6f7": {
+                  "mate": true
+                }
+              }
+            },
+            "h4e7": {
+              "moves": {
+                "d6f7": {
+                  "mate": true
+                }
+              }
+            },
+            "h4f6": {
+              "moves": {
+                "d6f7": {
+                  "mate": true
+                }
+              }
+            },
+            "h4g5": {
+              "moves": {
+                "d6f7": {
+                  "mate": true
+                }
+              }
+            },
+            "h4g3": {
+              "moves": {
+                "d6f7": {
+                  "mate": true
+                }
+              }
+            },
+            "h4f2": {
+              "moves": {
+                "g1g2": {
+                  "moves": {
+                    "g8f8": {
+                      "moves": {
+                        "e5g7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g8e8": {
+                      "moves": {
+                        "e5e8": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g8d8": {
+                      "moves": {
+                        "e5g7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g8c8": {
+                      "moves": {
+                        "e5g7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g8b8": {
+                      "moves": {
+                        "e5g7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g8a8": {
+                      "moves": {
+                        "e5g7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "f2a7": {
+                      "moves": {
+                        "d6f7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "f2b6": {
+                      "moves": {
+                        "d6f7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "f2c5": {
+                      "moves": {
+                        "d6f7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "f2h4": {
+                      "moves": {
+                        "d6f7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "f2d4": {
+                      "moves": {
+                        "d6f7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "f2g3": {
+                      "moves": {
+                        "d6f7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "f2e3": {
+                      "moves": {
+                        "d6f7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "f2g1": {
+                      "moves": {
+                        "d6f7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "f2e1": {
+                      "moves": {
+                        "d6f7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g4g3": {
+                      "moves": {
+                        "d6f7": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "h4e1": {
+              "moves": {
+                "d6f7": {
+                  "mate": true
+                }
+              }
+            },
+            "g4g3": {
+              "moves": {
+                "d6f7": {
+                  "mate": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "b5d6",
+      "g8e8",
+      "d6f7",
+      "h8g8",
+      "e5e8"
+    ],
+    "longest_example_san": [
+      "Nd6",
+      "Re8",
+      "Nf7+",
+      "Kg8",
+      "Qxe8#"
+    ]
+  },
+  {
+    "id": 15,
+    "fen": "r2B2k1/5ppp/8/5Q2/8/R7/5PPP/6K1 w - - 0 1",
+    "proof": {
+      "moves": {
+        "a3a8": {
+          "moves": {
+            "g8h8": {
+              "moves": {
+                "d8e7": {
+                  "mate": true
+                }
+              }
+            },
+            "g8f8": {
+              "moves": {
+                "d8f6": {
+                  "mate": true
+                }
+              }
+            },
+            "h7h6": {
+              "moves": {
+                "d8e7": {
+                  "mate": true
+                }
+              }
+            },
+            "g7g6": {
+              "moves": {
+                "d8f6": {
+                  "mate": true
+                }
+              }
+            },
+            "f7f6": {
+              "moves": {
+                "d8f6": {
+                  "moves": {
+                    "g8f7": {
+                      "moves": {
+                        "f6g5": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "h7h5": {
+              "moves": {
+                "d8e7": {
+                  "mate": true
+                }
+              }
+            },
+            "g7g5": {
+              "moves": {
+                "d8e7": {
+                  "moves": {
+                    "g8g7": {
+                      "moves": {
+                        "f5f6": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "a3a8",
+      "f7f6",
+      "d8f6",
+      "g8f7",
+      "f6g5"
+    ],
+    "longest_example_san": [
+      "Rxa8",
+      "f6",
+      "Bxf6+",
+      "Kf7",
+      "Bg5#"
+    ]
+  },
+  {
+    "id": 16,
+    "fen": "7k/1P6/6p1/8/8/6K1/8/5R2 w - - 0 1",
+    "proof": {
+      "moves": {
+        "f1f7": {
+          "moves": {
+            "h8g8": {
+              "moves": {
+                "f7d7": {
+                  "moves": {
+                    "g8h8": {
+                      "moves": {
+                        "b7b8q": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g8f8": {
+                      "moves": {
+                        "b7b8q": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g6g5": {
+                      "moves": {
+                        "b7b8q": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g6g5": {
+              "moves": {
+                "f7e7": {
+                  "moves": {
+                    "h8g8": {
+                      "moves": {
+                        "b7b8q": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g5g4": {
+                      "moves": {
+                        "b7b8q": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "f1f7",
+      "h8g8",
+      "f7d7",
+      "g8h8",
+      "b7b8q"
+    ],
+    "longest_example_san": [
+      "Rf7",
+      "Kg8",
+      "Rd7",
+      "Kh8",
+      "b8=Q#"
+    ]
+  },
+  {
+    "id": 17,
+    "fen": "6k1/P2P4/5R2/6b1/8/8/6K1/8 w - - 0 1",
+    "proof": {
+      "moves": {
+        "d7d8q": {
+          "moves": {
+            "g8h7": {
+              "moves": {
+                "d8e7": {
+                  "moves": {
+                    "h7h8": {
+                      "moves": {
+                        "f6f8": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "h7g8": {
+                      "moves": {
+                        "f6f8": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g8g7": {
+              "moves": {
+                "d8e7": {
+                  "moves": {
+                    "g7h8": {
+                      "moves": {
+                        "f6f8": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "g7g8": {
+                      "moves": {
+                        "f6f8": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "d7d8q",
+      "g8h7",
+      "d8e7",
+      "h7h8",
+      "f6f8"
+    ],
+    "longest_example_san": [
+      "d8=Q+",
+      "Kh7",
+      "Qe7+",
+      "Kh8",
+      "Rf8#"
+    ]
+  },
+  {
+    "id": 18,
+    "fen": "3Nk3/2P3b1/8/8/8/8/8/K5R1 w - - 0 1",
+    "proof": {
+      "moves": {
+        "g1g7": {
+          "moves": {
+            "e8f8": {
+              "moves": {
+                "d8e6": {
+                  "moves": {
+                    "f8e8": {
+                      "moves": {
+                        "c7c8q": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "g1g7",
+      "e8f8",
+      "d8e6",
+      "f8e8",
+      "c7c8q"
+    ],
+    "longest_example_san": [
+      "Rxg7",
+      "Kf8",
+      "Ne6+",
+      "Ke8",
+      "c8=Q#"
+    ]
+  },
+  {
+    "id": 19,
+    "fen": "8/n5kP/3P4/8/2Q5/5K2/8/8 w - - 0 1",
+    "proof": {
+      "moves": {
+        "c4g8": {
+          "moves": {
+            "g7h6": {
+              "moves": {
+                "f3g4": {
+                  "moves": {
+                    "a7c8": {
+                      "moves": {
+                        "h7h8q": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "a7c6": {
+                      "moves": {
+                        "h7h8q": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "a7b5": {
+                      "moves": {
+                        "h7h8q": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g7f6": {
+              "moves": {
+                "f3f4": {
+                  "moves": {
+                    "a7c8": {
+                      "moves": {
+                        "h7h8q": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "a7c6": {
+                      "moves": {
+                        "h7h8q": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "a7b5": {
+                      "moves": {
+                        "h7h8q": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "c4g8",
+      "g7h6",
+      "f3g4",
+      "a7c8",
+      "h7h8q"
+    ],
+    "longest_example_san": [
+      "Qg8+",
+      "Kh6",
+      "Kg4",
+      "Nc8",
+      "h8=Q#"
+    ]
+  },
+  {
+    "id": 20,
+    "fen": "7k/b1Pn4/R6P/8/8/6K1/8/8 w - - 0 1",
+    "proof": {
+      "moves": {
+        "c7c8q": {
+          "moves": {
+            "h8h7": {
+              "moves": {
+                "c8d7": {
+                  "moves": {
+                    "h7h8": {
+                      "moves": {
+                        "d7g7": {
+                          "mate": true
+                        }
+                      }
+                    },
+                    "h7g8": {
+                      "moves": {
+                        "d7g7": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "d7f8": {
+              "moves": {
+                "c8f8": {
+                  "moves": {
+                    "h8h7": {
+                      "moves": {
+                        "f8g7": {
+                          "mate": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "longest_example_uci": [
+      "c7c8q",
+      "h8h7",
+      "c8d7",
+      "h7h8",
+      "d7g7"
+    ],
+    "longest_example_san": [
+      "c8=Q+",
+      "Kh7",
+      "Qxd7+",
+      "Kh8",
+      "Qg7#"
+    ]
+  }
+]

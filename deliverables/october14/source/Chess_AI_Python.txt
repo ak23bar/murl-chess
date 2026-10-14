@@ -1,0 +1,163 @@
+import random
+import chess
+import numpy as np
+import torch
+import torch.nn as nn
+import torch.optim as optim
+
+# 1. REPRESENT THE CHESS BOARD AS A NUMERICAL TENSOR (8x8x12 matrix)
+def board_to_tensor(board):
+    # 12 layers: 6 piece types x 2 colors
+    matrix = np.zeros((12, 8, 8), dtype=np.float32)
+    piece_map = {
+        chess.PAWN: 0, chess.KNIGHT: 1, chess.BISHOP: 2, 
+        chess.ROOK: 3, chess.QUEEN: 4, chess.KING: 5
+    }
+    
+    for square in chess.SQUARES:
+        piece = board.piece_at(square)
+        if piece is not None:
+            row = 7 - chess.square_rank(square)
+            col = chess.square_file(square)
+            channel = piece_map[piece.piece_type]
+            if piece.color == chess.BLACK:
+                channel += 6
+            matrix[channel, row, col] = 1.0
+            
+    # Flip perspective if it's Black's turn so the network learns universally
+    if board.turn == chess.BLACK:
+        matrix = matrix[::-1, :, :]  # Reverse color channels
+        matrix = np.rot90(matrix, 2, axes=(1, 2))  # Rotate board 180 degrees
+        
+    return torch.tensor(matrix).unsqueeze(0) # Add batch dimension (1, 12, 8, 8)
+
+# 2. DEFINE THE DEEP Q-NETWORK ARCHITECTURE
+class ChessEvaluationNet(nn.Module):
+    def __init__(self):
+        super(ChessEvaluationNet, self).__init__()
+        # Convolutional layers to look at geometric patterns
+        self.conv1 = nn.Conv2d(12, 64, kernel_size=3, padding=1)
+        self.conv2 = nn.Conv2d(64, 128, kernel_size=3, padding=1)
+        self.conv3 = nn.Conv2d(128, 128, kernel_size=3, padding=1)
+        
+        # Dense linear layers to output a single position value (Q-Value)
+        self.fc1 = nn.Linear(128 * 8 * 8, 256)
+        self.fc2 = nn.Linear(256, 1)
+        
+    def forward(self, x):
+        x = torch.relu(self.conv1(x))
+        x = torch.relu(self.conv2(x))
+        x = torch.relu(self.conv3(x))
+        x = x.view(-1, 128 * 8 * 8) # Flatten
+        x = torch.relu(self.fc1(x))
+        q_value = torch.tanh(self.fc2(x)) # Bound between -1 and 1
+        return q_value
+
+# 3. DEFINE THE RL AGENT
+class ChessRLAgent:
+    def __init__(self, lr=0.001, gamma=0.99, epsilon=1.0, epsilon_decay=0.995, epsilon_min=0.1):
+        self.model = ChessEvaluationNet()
+        self.optimizer = optim.Adam(self.model.parameters(), lr=lr)
+        self.criterion = nn.MSELoss()
+        self.gamma = gamma
+        self.epsilon = epsilon
+        self.epsilon_decay = epsilon_decay
+        self.epsilon_min = epsilon_min
+
+    def select_action(self, board):
+        legal_moves = list(board.legal_moves)
+        
+        # Exploration: Pick a completely random legal move
+        if random.random() < self.epsilon:
+            return random.choice(legal_moves)
+        
+        # Exploitation: Score each move using the Neural Network and pick the best
+        best_move = None
+        best_value = -float('inf')
+        
+        for move in legal_moves:
+            board.push(move)
+            # Evaluate the resulting board state from the active player's viewpoint
+            board_tensor = board_to_tensor(board)
+            with torch.no_grad():
+                # We negate because the score belongs to the opponent's next turn state
+                value = -self.model(board_tensor).item()
+            board.pop()
+            
+            if value > best_value:
+                best_value = value
+                best_move = move
+                
+        return best_move if best_move else random.choice(legal_moves)
+
+    def train_step(self, state, reward, next_state, done):
+        self.optimizer.zero_grad()
+        
+        # Current Q-prediction
+        current_q = self.model(state)
+        
+        # Target Q calculation
+        if done:
+            target_q = torch.tensor([[float(reward)]], dtype=torch.float32)
+        else:
+            with torch.no_grad():
+                next_q = self.model(next_state)
+                # Opponent's best turn minimizes our gain
+                target_q = torch.tensor([[reward]], dtype=torch.float32) - self.gamma * next_q
+                
+        loss = self.criterion(current_q, target_q)
+        loss.backward()
+        self.optimizer.step()
+        
+        # Decay exploration rate over time
+        if self.epsilon > self.epsilon_min:
+            self.epsilon *= self.epsilon_decay
+
+# 4. TRAINING LOOP VIA SELF-PLAY
+def train_chess_bot(episodes=100):
+    agent = ChessRLAgent()
+    print("Starting training via self-play...")
+    
+    for episode in range(1, episodes + 1):
+        board = chess.Board()
+        states_history = []
+        
+        while not board.is_game_over():
+            current_tensor = board_to_tensor(board)
+            move = agent.select_action(board)
+            
+            board.push(move)
+            states_history.append((current_tensor, move))
+            
+        # Determine outcome rewards
+        result = board.result()
+        if result == "1-0":    # White wins
+            white_reward, black_reward = 1.0, -1.0
+        elif result == "0-1":  # Black wins
+            white_reward, black_reward = -1.0, 1.0
+        else:                  # Draw
+            white_reward, black_reward = 0.0, 0.0
+            
+        # Backpropagate rewards through history transitions
+        for i in range(len(states_history) - 1):
+            state_t, _ = states_history[i]
+            next_state_t, _ = states_history[i+1]
+            
+            # Alternate turn rewards
+            reward = white_reward if i % 2 == 0 else black_reward
+            agent.train_step(state_t, reward, next_state_t, done=False)
+            
+        # Final move transition
+        final_state, _ = states_history[-1]
+        final_reward = white_reward if (len(states_history)-1) % 2 == 0 else black_reward
+        agent.train_step(final_state, final_reward, None, done=True)
+        
+        if episode % 10 == 0:
+            print(f"Episode {episode}/{episodes} | Epsilon: {agent.epsilon:.3f} | Total Moves: {len(states_history)}")
+            
+    print("Training finished!")
+    return agent
+
+if __name__ == "__main__":
+    # Train the bot for a small test window of 50 self-play iterations
+    trained_agent = train_chess_bot(episodes=50)

@@ -1,0 +1,37 @@
+{
+  "transcription": "All 1280 squares match independent PDF font-glyph extraction; all 20 captions/markers visually checked.",
+  "valid_positions": 20,
+  "exact_three_unique": 20,
+  "source_hashes_verified": true,
+  "raw_records": 160,
+  "search_records": 100,
+  "statistics": {
+    "minimax_3": {
+      "total": 20,
+      "completed": 20,
+      "timeouts": 0,
+      "completed_success": 6,
+      "returned_move_hits": 6,
+      "median_completed_seconds": 0.5349559499882162,
+      "total_seconds": 16.695763900061138
+    },
+    "minimax_5": {
+      "total": 20,
+      "completed": 2,
+      "timeouts": 18,
+      "completed_success": 2,
+      "returned_move_hits": 10,
+      "median_completed_seconds": 8.194904399992083,
+      "total_seconds": 376.3924532000383
+    },
+    "mcts": {
+      "total": 60,
+      "completed": 60,
+      "timeouts": 0,
+      "completed_success": 9,
+      "returned_move_hits": 9,
+      "median_completed_seconds": 2.724385599998641,
+      "total_seconds": 177.81360700001824
+    }
+  }
+}
