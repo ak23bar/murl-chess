@@ -1,0 +1,4 @@
+chess==1.11.2
+python-chess==1.999
+# Optional: only needed to re-extract PDF glyphs, not to run the experiment.
+pypdf==6.10.0

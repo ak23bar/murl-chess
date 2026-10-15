@@ -1,0 +1,33 @@
+{
+  "utc_start": "2026-10-14T09:52:56.472022+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+  "chess": "1.11.2",
+  "baseline": "046a8d3c5ad54f7e71f9edbd66083a3fafa04e34",
+  "source_sha256": {
+    "src/evaluation.py": "4111d08a99136c42829c39f9d68f30f58ab9792c1d84f40de59933cd366772da",
+    "src/mcts.py": "85458de8d96c48864eb5f957a698f2077b185ccf0086f063b7e7661df20d471b",
+    "src/minimax.py": "865696650eb6e5e42694e26a946e5b08d6c6dfc996bda37a3a5323c5cb46c856",
+    "src/__init__.py": "61d81fd9c1cc08f8ec1d930e56dcde5d40bcf6323d915a6e0a70b9323119a09f",
+    "experiments/october14/oracle.py": "3af2b532f0f74e5c3270594fb6acaa1e3d5e36f112b1fd759bcf74ddd4164f8f",
+    "experiments/october14/positions.py": "6ec9d6c8c5ac0fb3c8f51c71de619e1d76938d39599cf39c57686cb2ed63b081",
+    "experiments/october14/run.py": "24bc516788a1f6bd903cee02a11a8f2aee79c1dec62ebc1c604913ec1b01998c",
+    "experiments/october14/__init__.py": "ac1d2b45a50ac85448e64f6e18609cff961a13ba1f866dbe47677a19e4f9b578",
+    "deliverables/october14/source/Chess_AI_Python.txt": "1d021717cdcfe0b0e4e45dc9fa74a02ce0103020222acd8797b1f0f42dd0f7d7",
+    "deliverables/october14/source/Positions2.pdf": "d8360f489c3a747fbebea2ce7ab5f40687afcc674d1bf2ab11748c158b703b1a"
+  },
+  "settings": {
+    "oracle_seconds": 120,
+    "search_seconds": 20,
+    "mcts_iterations": 1000,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "rollout_cap": 40,
+    "order": "position ascending; oracle 1,3,5; minimax 3,5; MCTS seeds 0,1,2",
+    "timings": "serial wall seconds; imports and file writing excluded"
+  }
+}

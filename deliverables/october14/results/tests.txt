@@ -1,0 +1,21 @@
+test_certificate_checker_rejects_missing_defense_and_false_mate (test_october14.OctoberTests.test_certificate_checker_rejects_missing_defense_and_false_mate) ... ok
+test_oracle_both_colors_and_input_preserved (test_october14.OctoberTests.test_oracle_both_colors_and_input_preserved) ... ok
+test_oracle_matches_full_minimax_at_three_plies (test_october14.OctoberTests.test_oracle_matches_full_minimax_at_three_plies) ... ok
+test_stalemate_and_timeout_are_not_mate_proofs (test_october14.OctoberTests.test_stalemate_and_timeout_are_not_mate_proofs) ... ok
+test_transcriptions (test_october14.OctoberTests.test_transcriptions) ... ok
+test_interrupted_search_preserves_board_and_excludes_partial_rollout (test_search.SearchTests.test_interrupted_search_preserves_board_and_excludes_partial_rollout) ... ok
+test_invalid_arguments_fail_clearly (test_search.SearchTests.test_invalid_arguments_fail_clearly) ... ok
+test_material_sign_and_bounded_reward (test_search.SearchTests.test_material_sign_and_bounded_reward) ... ok
+test_mcts_seed_legality_and_accounting (test_search.SearchTests.test_mcts_seed_legality_and_accounting) ... ok
+test_minimax_finds_mate_for_either_color (test_search.SearchTests.test_minimax_finds_mate_for_either_color) ... ok
+test_optional_draw_claims_are_distinct_from_automatic_draws (test_search.SearchTests.test_optional_draw_claims_are_distinct_from_automatic_draws) ... ok
+test_plain_minimax_exhaustively_counts_starting_tree (test_search.SearchTests.test_plain_minimax_exhaustively_counts_starting_tree) ... ok
+test_searches_preserve_input_board_and_history (test_search.SearchTests.test_searches_preserve_input_board_and_history) ... ok
+test_terminal_mate_stalemate_insufficient_material_and_75_move (test_search.SearchTests.test_terminal_mate_stalemate_insufficient_material_and_75_move) ... ok
+test_uct_opponent_prefers_its_own_reward (test_search.SearchTests.test_uct_opponent_prefers_its_own_reward) ... ok
+test_zero_second_budget_is_legal_and_explicitly_incomplete (test_search.SearchTests.test_zero_second_budget_is_legal_and_explicitly_incomplete) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 2.876s
+
+OK

@@ -1,0 +1,62 @@
+{
+  "attempts": [
+    {
+      "command": [
+        "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1007.9446.0_x64__2p2nqsd0c76g0\\app\\resources\\tectonic\\tectonic.exe",
+        "-X",
+        "compile",
+        "--outdir",
+        "C:\\Users\\akbar\\.codex\\.chatgpt-projects\\g-p-6aa5897c8d488191864d3b3e8516fc26\\murl-chess\\deliverables\\october14",
+        "--outfmt",
+        "pdf",
+        "--print",
+        "--untrusted",
+        "report.tex"
+      ],
+      "compiler": "tectonic",
+      "exitCode": 0,
+      "log": "note: \"version 2\" Tectonic command-line interface activated\nnote: Running TeX ...\n(report.tex\nLaTeX2e <2021-11-15> patch level 1\nL3 programming layer <2022-02-24> (article.cls\nDocument Class: article 2021/10/04 v1.4n Standard LaTeX document class\n(size10.cloFontconfig error: Cannot load default config file: No such file: (null)\n)) (geometry.sty (keyval.sty) (ifvtex.sty (iftex.sty))) (fontenc.sty\n(t1lmr.fd)) (lmodern.sty) (amsmath.sty\nFor additional information on amsmath, use the `?' option.\n(amstext.sty (amsgen.sty)) (amsbsy.sty) (amsopn.sty)) (booktabs.sty)\n(xcolor.sty (color.cfg) (xetex.def)) (hyperref.sty (ltxcmds.sty)\n(pdftexcmds.sty (infwarerr.sty)) (kvsetkeys.sty) (kvdefinekeys.sty)\n(pdfescape.sty) (hycolor.sty) (letltxmacro.sty) (auxhook.sty) (kvoptions.sty)\n(pd1enc.def) (intcalc.sty) (etexcmds.sty) (puenc.def) (url.sty) (bitset.sty\n(bigintcalc.sty)) (atbegshi-ltx.sty)) (hxetex.def (stringenc.sty)\n(rerunfilecheck.sty (atveryend-ltx.sty) (uniquecounter.sty))) (fancyhdr.sty)\n(l3backend-xetex.def)\nNo file report.aux.\n(ts1cmr.fd)\n*geometry* driver: auto-detecting\n*geometry* detected driver: xetex\n(nameref.sty (refcount.sty) (gettitlestring.sty))\n\nPackage hyperref Warning: Rerun to get /PageLabels entry.\n\n(t1lmtt.fd) (ot1lmr.fd) (omllmm.fd) (omslmsy.fd) (omxlmex.fd) [1] [2]\n(report.aux)\n\nPackage rerunfilecheck Warning: File `report.out' has changed.\n(rerunfilecheck)                Rerun to get outlines right\n(rerunfilecheck)                or use package `bookmark'.\n\n )\nOutput written on report.xdv (2 pages, 13548 bytes).\nTranscript written on report.log.\nnote: Rerunning TeX because \"report.aux\" changed ...\n(report.tex\nLaTeX2e <2021-11-15> patch level 1\nL3 programming layer <2022-02-24> (article.cls\nDocument Class: article 2021/10/04 v1.4n Standard LaTeX document class\n(size10.clo)) (geometry.sty (keyval.sty) (ifvtex.sty (iftex.sty))) (fontenc.sty\n(t1lmr.fd)) (lmodern.sty) (amsmath.sty\nFor additional information on amsmath, use the `?' option.\n(amstext.sty (amsgen.sty)) (amsbsy.sty) (amsopn.sty)) (booktabs.sty)\n(xcolor.sty (color.cfg) (xetex.def)) (hyperref.sty (ltxcmds.sty)\n(pdftexcmds.sty (infwarerr.sty)) (kvsetkeys.sty) (kvdefinekeys.sty)\n(pdfescape.sty) (hycolor.sty) (letltxmacro.sty) (auxhook.sty) (kvoptions.sty)\n(pd1enc.def) (intcalc.sty) (etexcmds.sty) (puenc.def) (url.sty) (bitset.sty\n(bigintcalc.sty)) (atbegshi-ltx.sty)) (hxetex.def (stringenc.sty)\n(rerunfilecheck.sty (atveryend-ltx.sty) (uniquecounter.sty))) (fancyhdr.sty)\n(l3backend-xetex.def) (report.aux) (ts1cmr.fd)\n*geometry* driver: auto-detecting\n*geometry* detected driver: xetex\n(nameref.sty (refcount.sty) (gettitlestring.sty)) (report.out) (report.out)\n(t1lmtt.fd) (ot1lmr.fd) (omllmm.fd) (omslmsy.fd) (omxlmex.fd) [1] [2]\n(report.aux) )\nOutput written on report.xdv (2 pages, 13548 bytes).\nTranscript written on report.log.\nnote: Running xdvipdfmx ...\n[1][2]60041 bytes written\nnote: Writing `C:\\Users\\akbar\\.codex\\.chatgpt-projects\\g-p-6aa5897c8d488191864d3b3e8516fc26\\murl-chess\\deliverables\\october14\\report.pdf` (58.6337890625 KiB)\nnote: Skipped writing 2 intermediate files (use --keep-intermediates to keep them)\n",
+      "pdfExists": true,
+      "pdfPath": "C:\\Users\\akbar\\.codex\\.chatgpt-projects\\g-p-6aa5897c8d488191864d3b3e8516fc26\\murl-chess\\deliverables\\october14\\report.pdf"
+    }
+  ],
+  "command": [
+    "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1007.9446.0_x64__2p2nqsd0c76g0\\app\\resources\\tectonic\\tectonic.exe",
+    "-X",
+    "compile",
+    "--outdir",
+    "C:\\Users\\akbar\\.codex\\.chatgpt-projects\\g-p-6aa5897c8d488191864d3b3e8516fc26\\murl-chess\\deliverables\\october14",
+    "--outfmt",
+    "pdf",
+    "--print",
+    "--untrusted",
+    "report.tex"
+  ],
+  "compiler": "tectonic",
+  "exitCode": 0,
+  "log": "note: \"version 2\" Tectonic command-line interface activated\nnote: Running TeX ...\n(report.tex\nLaTeX2e <2021-11-15> patch level 1\nL3 programming layer <2022-02-24> (article.cls\nDocument Class: article 2021/10/04 v1.4n Standard LaTeX document class\n(size10.cloFontconfig error: Cannot load default config file: No such file: (null)\n)) (geometry.sty (keyval.sty) (ifvtex.sty (iftex.sty))) (fontenc.sty\n(t1lmr.fd)) (lmodern.sty) (amsmath.sty\nFor additional information on amsmath, use the `?' option.\n(amstext.sty (amsgen.sty)) (amsbsy.sty) (amsopn.sty)) (booktabs.sty)\n(xcolor.sty (color.cfg) (xetex.def)) (hyperref.sty (ltxcmds.sty)\n(pdftexcmds.sty (infwarerr.sty)) (kvsetkeys.sty) (kvdefinekeys.sty)\n(pdfescape.sty) (hycolor.sty) (letltxmacro.sty) (auxhook.sty) (kvoptions.sty)\n(pd1enc.def) (intcalc.sty) (etexcmds.sty) (puenc.def) (url.sty) (bitset.sty\n(bigintcalc.sty)) (atbegshi-ltx.sty)) (hxetex.def (stringenc.sty)\n(rerunfilecheck.sty (atveryend-ltx.sty) (uniquecounter.sty))) (fancyhdr.sty)\n(l3backend-xetex.def)\nNo file report.aux.\n(ts1cmr.fd)\n*geometry* driver: auto-detecting\n*geometry* detected driver: xetex\n(nameref.sty (refcount.sty) (gettitlestring.sty))\n\nPackage hyperref Warning: Rerun to get /PageLabels entry.\n\n(t1lmtt.fd) (ot1lmr.fd) (omllmm.fd) (omslmsy.fd) (omxlmex.fd) [1] [2]\n(report.aux)\n\nPackage rerunfilecheck Warning: File `report.out' has changed.\n(rerunfilecheck)                Rerun to get outlines right\n(rerunfilecheck)                or use package `bookmark'.\n\n )\nOutput written on report.xdv (2 pages, 13548 bytes).\nTranscript written on report.log.\nnote: Rerunning TeX because \"report.aux\" changed ...\n(report.tex\nLaTeX2e <2021-11-15> patch level 1\nL3 programming layer <2022-02-24> (article.cls\nDocument Class: article 2021/10/04 v1.4n Standard LaTeX document class\n(size10.clo)) (geometry.sty (keyval.sty) (ifvtex.sty (iftex.sty))) (fontenc.sty\n(t1lmr.fd)) (lmodern.sty) (amsmath.sty\nFor additional information on amsmath, use the `?' option.\n(amstext.sty (amsgen.sty)) (amsbsy.sty) (amsopn.sty)) (booktabs.sty)\n(xcolor.sty (color.cfg) (xetex.def)) (hyperref.sty (ltxcmds.sty)\n(pdftexcmds.sty (infwarerr.sty)) (kvsetkeys.sty) (kvdefinekeys.sty)\n(pdfescape.sty) (hycolor.sty) (letltxmacro.sty) (auxhook.sty) (kvoptions.sty)\n(pd1enc.def) (intcalc.sty) (etexcmds.sty) (puenc.def) (url.sty) (bitset.sty\n(bigintcalc.sty)) (atbegshi-ltx.sty)) (hxetex.def (stringenc.sty)\n(rerunfilecheck.sty (atveryend-ltx.sty) (uniquecounter.sty))) (fancyhdr.sty)\n(l3backend-xetex.def) (report.aux) (ts1cmr.fd)\n*geometry* driver: auto-detecting\n*geometry* detected driver: xetex\n(nameref.sty (refcount.sty) (gettitlestring.sty)) (report.out) (report.out)\n(t1lmtt.fd) (ot1lmr.fd) (omllmm.fd) (omslmsy.fd) (omxlmex.fd) [1] [2]\n(report.aux) )\nOutput written on report.xdv (2 pages, 13548 bytes).\nTranscript written on report.log.\nnote: Running xdvipdfmx ...\n[1][2]60041 bytes written\nnote: Writing `C:\\Users\\akbar\\.codex\\.chatgpt-projects\\g-p-6aa5897c8d488191864d3b3e8516fc26\\murl-chess\\deliverables\\october14\\report.pdf` (58.6337890625 KiB)\nnote: Skipped writing 2 intermediate files (use --keep-intermediates to keep them)\n",
+  "pdfExists": true,
+  "pdfPath": "C:\\Users\\akbar\\.codex\\.chatgpt-projects\\g-p-6aa5897c8d488191864d3b3e8516fc26\\murl-chess\\deliverables\\october14\\report.pdf",
+  "rootFile": "C:\\Users\\akbar\\.codex\\.chatgpt-projects\\g-p-6aa5897c8d488191864d3b3e8516fc26\\murl-chess\\deliverables\\october14\\report.tex",
+  "tectonic": {
+    "checked": [
+      {
+        "path": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1007.9446.0_x64__2p2nqsd0c76g0\\app\\resources\\tectonic\\tectonic.exe",
+        "source": "app"
+      }
+    ],
+    "path": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1007.9446.0_x64__2p2nqsd0c76g0\\app\\resources\\tectonic\\tectonic.exe",
+    "reason": "Tectonic executable is available.",
+    "source": "app",
+    "status": "available",
+    "version": "Tectonic 0.17.0+20260731"
+  },
+  "tectonicSuitability": {
+    "reasons": [],
+    "scannedFiles": [
+      "C:\\Users\\akbar\\.codex\\.chatgpt-projects\\g-p-6aa5897c8d488191864d3b3e8516fc26\\murl-chess\\deliverables\\october14\\report.tex"
+    ],
+    "suitable": true
+  },
+  "texliveDetection": null
+}
