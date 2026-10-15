@@ -3,56 +3,56 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,amsmath,booktabs,xcolor,hyperref,fancyhdr}
 \definecolor{navy}{HTML}{19384B}
-\hypersetup{colorlinks=true,urlcolor=navy,pdftitle={MURL Corrected Mate-in-Three Benchmark},pdfauthor={Prepared for Akbar Aman with Codex assistance}}
-\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small MURL Chess | October 14, 2026}\fancyhead[R]{\small Corrected Positions2 benchmark}\fancyfoot[C]{\thepage}
-\setlength{\headheight}{14pt}\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\hypersetup{colorlinks=true,urlcolor=navy,pdftitle={MURL Chess Results - October 14, 2026},pdfauthor={Akbar Aman}}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small MURL Chess | October 14, 2026}\fancyhead[R]{\small Minimax and MCTS results}\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
 \makeatletter
 \renewcommand\section{\@startsection{section}{1}{0pt}{10pt}{5pt}{\normalfont\large\bfseries}}
 \makeatother
 \begin{document}
-{\color{navy}\LARGE\bfseries Mate-in-three: verification and search results\par}
-\textbf{Prepared for Akbar Aman} with OpenAI Codex assistance\\
-For Professors Evangelos Kobotis and Drew Shulman; meeting October 14, 2026, 8:30 PM America/Chicago.
+{\color{navy}\LARGE\bfseries MURL Chess Results: October 14, 2026\par}
+{\large Minimax and MCTS on the 20 corrected positions}\par
+\textbf{Akbar Aman}\\
+For Professors Evangelos Kobotis and Drew Shulman | Meeting: 8:30 PM, America/Chicago
 
-\section*{Finding}
-All 20 corrected diagrams have exactly one first move that forces mate within five plies, and none permits a forced mate within one or three plies. Three-ply Minimax selected that key in \textbf{6/20} cases; MCTS selected it in \textbf{9/60} runs (three seeds per case). Five-ply baseline Minimax completed only \textbf{2/20} searches under a 20-second ceiling. Its 18 timeouts are censored searches, not completed five-ply results.
+\section*{What I tested and found}
+I tested my existing Python implementations of Minimax and Monte Carlo Tree Search (MCTS) on the 20 corrected positions, comparing their first moves with independently verified solutions. Minimax at depth 3 chose the correct first move in \textbf{6/20 positions}; MCTS did so in \textbf{9/60 runs} across three random seeds. My depth-5 Minimax attempts completed only \textbf{2/20 searches}; the other 18 reached the 20-second limit.
 
-\section*{Source, conventions, and independent verification}
-Only the user-supplied corrected \texttt{Positions2.pdf} was used; the earlier erroneous set was excluded. Manual transcription from the four rendered pages was checked against all 1,280 PDF glyph squares. Piece colors, coordinates, side markers and captions agree. All 20 FENs pass \texttt{python-chess} validity checks; only case 3 is Black to move. These are structural legality checks, not proofs of historical reachability or verification of the named games.
+\textbf{In everyday terms:} I asked each program to choose the first move of a forced checkmate, then checked its answer. A correct first move does not by itself show that the program can finish the combination. A timeout means I stopped the search before it finished; I report its partial answer separately.
 
-A mate in three attacking moves can require \(A,D,A,D,A\): \textbf{five plies}. The unchanged baseline's \texttt{depth=3} counts three individual plies. A separate exact AND/OR solver, independent of both baseline search implementations, tests every legal root move at horizons 1, 3 and 5. It uses
+\section*{Why three moves can require five plies}
+A \emph{ply} is one player's move. In my Minimax code, depth 3 means \emph{my move, their reply, my next move}. A mate in three attacking moves can require \emph{my move, their reply, my move, their reply, my mating move}: \textbf{five plies}. I therefore retained the requested three-ply runs and also attempted five-ply searches. These measure different amounts of look-ahead.
+
+\section*{How I checked the positions and solutions}
+I used only the corrected \texttt{Positions2.pdf}, checking all 1,280 board squares, colors and side markers. Each board is stored as a \emph{FEN}, a compact text description. All 20 passed \texttt{python-chess} validity checks; only case 3 is Black to move. Structural legality does not establish that a position occurred in the named historical game.
+
+For the reference solutions, I used a separate exact AND/OR search to test every legal first move at 1, 3 and 5 plies. It found \textbf{one winning first move per position at five plies, and none at one or three}. The attacker needs \emph{one} move that works, but that move must withstand \emph{every} defensive reply. Formally, for legal moves $L(s)$ and successor $s_m$,
 \[
- W(s,d)=\begin{cases}
- 1,&\text{defender is checkmated},\\
- 0,&\text{other terminal state or exhausted horizon},\\
- \bigvee_{m\in L(s)}W(s_m,d-1),&\text{attacker to move},\\
- \bigwedge_{m\in L(s)}W(s_m,d-1),&\text{defender to move}.
- \end{cases}
+W(s,d)=\bigvee_{m\in L(s)}W(s_m,d-1)\quad\text{(attacker)},\qquad
+W(s,d)=\bigwedge_{m\in L(s)}W(s_m,d-1)\quad\text{(defender)}.
 \]
-Memoization and logical short-circuiting preserve exact answers; quiet moves and every promotion are included. Separately checked strategy certificates cover \emph{every} defensive reply for each winning key. The oracle and certificate checker share the baseline's rules library, so they are independent search logic, not an independent rules engine.
+Here $W$ means a forced mate within the remaining $d$ plies: defender checkmate is success; other endings or an exhausted horizon are failure. Saved mating strategies were also checked against every defensive reply. The verifier includes quiet moves and all promotions. Its search logic is separate, but it shares the programs' chess-rules library.
 
-FENs assume no castling or en-passant rights, halfmove clock zero, and no prior repetition history. All six alternative Black castling-right assignments for cases 1 and 4 preserve the unique key. No other diagram supports castling or a legal immediate en-passant capture. Optional draw claims are not modeled. Historical rights and clocks are not supplied by the diagrams.
+\section*{Search settings and measured results}
+\textbf{Minimax} looks ahead and assumes the opponent chooses the best reply. At its stopping point, my existing version mainly counts material (P=1, N=B=3, R=5, Q=9; mate=$\pm10000$). \textbf{MCTS} explores sampled continuations and uses their results to guide further exploration. I used 1,000 simulations per run, seeds 0/1/2, UCT exploration constant $\sqrt2$, and random rollouts capped at 40 plies. A seed makes a random run repeatable. MCTS uses a simulation budget, \emph{not a fixed search depth}; its rollout cap is separate from the tree path already explored.
 
-\section*{Measured protocol and aggregate results}
-Unchanged September baseline commit \texttt{046a8d3}: plain Minimax with material leaves (P=1, N=B=3, R=5, Q=9; mate=\(\pm10000\)); UCT MCTS with \(C=\sqrt2\), uniform random rollouts capped at 40 plies, material-based cutoff rewards, and most-visited root selection. Each MCTS run requests 1,000 simulations with seed 0, 1 or 2; this is \emph{not} fixed-depth search. A rollout cap is separate from the selected tree path. Each search is capped at 20 seconds; each oracle call at 120 seconds. Calls run serially in case order on Windows, Python 3.12.14, chess 1.11.2. Timings include search overhead but exclude imports and output writing.
-
+I kept the September implementations unchanged (commit \texttt{046a8d3}). Calls ran serially on Windows with Python 3.12.14 and chess 1.11.2. Each measured search had a 20-second limit; each verifier call had 120 seconds. Times include search overhead, excluding imports and output writing.
 \begin{center}\small
 \begin{tabular}{lrrrr}\toprule
-Method & Completed & Key hits/completed & Timeouts & Median seconds$^\dagger$\\\midrule
+Method & Completed & Correct/completed & Timeouts & Median seconds$^\dagger$\\\midrule
 Minimax, 3 plies & 20/20 & 6/20 & 0 & 0.535 \\
 Minimax, 5 plies & 2/20 & 2/2 & 18 & 8.195 \\
 MCTS, 1,000 simulations & 60/60 & 9/60 & 0 & 2.724 \\
 \bottomrule\end{tabular}
 \end{center}
-{\footnotesize $^\dagger$Completed calls only; the five-ply median describes just cases 16 and 18. No equal-time or general playing-strength comparison is implied.}
+{\footnotesize $^\dagger$Completed searches only. The five-ply median represents just cases 16 and 18. These are not equal-time budgets or a general measure of playing strength.}
 
 \newpage
-\section*{All 20 positions: expected and selected first moves}
-Standard algebraic notation; \textbf{bold selections} match the verified key. An asterisk marks a timeout's partial/fallback move and does not indicate a completed search. Full FENs, individual runtimes, scores, node counts and rollout statistics are supplied in the CSV/JSON results.
-
+\section*{Results for all 20 positions}
+Notation: K=king, Q=queen, R=rook, B=bishop, N=knight; $x$=capture, $+$=check, $=$=promotion. For example, Nxg7+ means a knight captures on g7 with check. \textbf{Bold} marks a correct selection; an asterisk marks a timeout's partial answer. MCTS columns identify the seed.
 \begin{center}\small\renewcommand{\arraystretch}{1.08}
 \begin{tabular}{rllllll}\toprule
-Case & Verified key & Minimax 3 & Minimax 5 & MCTS 0 & MCTS 1 & MCTS 2\\\midrule
+Case & Verified move & Minimax 3 & Minimax 5 & MCTS 0 & MCTS 1 & MCTS 2\\\midrule
 1 & Nxg7+ & Nf4 & Bf8* & Bb4 & \textbf{Nxg7+} & g5 \\
 2 & Bf5+ & Be2+ & Bxh7+* & fxe7 & fxe7 & Bf1+ \\
 3 & Ne2+ & Bc3 & Kh7* & Rxg2 & Nh1 & Bc5 \\
@@ -76,16 +76,20 @@ Case & Verified key & Minimax 3 & Minimax 5 & MCTS 0 & MCTS 1 & MCTS 2\\\midrule
 \bottomrule\end{tabular}
 \end{center}
 
-\section*{Interpretation and limits}
-\textbf{Choosing a key is not proving a mate.} Three-ply Minimax cannot see the full five-ply mate here; its six key matches arise from its truncated evaluation and tie-breaking. MCTS's nine matches likewise establish first-move agreement, not a forced continuation. All 60 MCTS calls completed their simulation budgets, but 89.6\% of their 60,000 rollouts hit the cap and used a material heuristic. These rewards are not calibrated win probabilities.
+\section*{What I conclude from these results}
+\textbf{Limited look-ahead matters.} Three-ply Minimax cannot see the full five-ply mating sequence. I interpret its six correct choices as first-move matches, not proof of the entire mate. MCTS's nine matches also do not prove a forced continuation. All 60 MCTS runs finished, but 89.6\% of their 60,000 rollouts hit the cap and used a material estimate. Most simulated games therefore ended before a real outcome was available; their scores are not calibrated winning probabilities.
 
-\textbf{Five-ply cost is a material result.} Only cases 16 and 18 completed, and both found their verified keys. Of the 18 timeout moves, eight happen to match the key; these are excluded from completed-search success. The 10/20 total returned-key matches must not be described as 10 solved cases. No timing trials were repeated for Minimax; three MCTS seeds are too few for broad statistical claims. Desktop load and fixed execution order can affect timings.
+\textbf{Deeper search was costly.} Only cases 16 and 18 finished at five plies; both chose correctly. Eight timeout answers also matched, but I exclude them from completed-search success: 10 matching returned moves do not mean 10 completed solutions. I ran one timing trial per Minimax condition and three MCTS seeds. This small sample, desktop load and fixed run order limit broader comparisons.
 
-\textbf{Validation and next step.} Sixteen automated tests passed; audit checks covered all 160 raw records (60 oracle calls and 100 baseline searches), source hashes, legal selected moves, and MCTS accounting. Three fixed-seed replays reproduced all root statistics. The strategy certificates prove the winning branches; the oracle separately excludes other keys and faster mates. A useful next experiment is alpha-beta pruning and move ordering on a new branch, followed by a larger MCTS budget sweep. Neural-network training was not run: the supplied \texttt{Chess\_AI\_Python.txt} is retained only as subsequent-scope context.
+\textbf{My next step} is to discuss the intended depth convention, then consider alpha-beta pruning and move ordering to reduce unnecessary Minimax search, and larger MCTS budgets. I have not run neural-network training; that remains the next stage.
 
-\section*{Provenance and reproducibility}
-Codex transcribed, implemented the new verifier and experiment scripts, executed the runs, and drafted this report. Akbar's personal review is pending; this does not claim independent student authorship. The September algorithms and artifacts are unchanged. Source files, pinned dependencies, raw logs, proof trees, tests, reproduction commands, meeting notes and an \emph{unsent} email draft accompany this report.
+\section*{Validation, assumptions, and reproducibility}
+Validation includes 16 passing tests, audits of all 160 raw records, and three exact fixed-seed MCTS replays. The reference search ruled out faster mates and other winning first moves; saved strategies check every defensive reply.
 
-{\small \textbf{Repository:} \href{https://github.com/ak23bar/murl-chess/tree/october14-corrected-positions}{ak23bar/murl-chess: october14-corrected-positions}.\\
-\textbf{References:} Corrected \texttt{Positions2.pdf}, user-supplied, four pages; September baseline source and \texttt{references.bib} (AIMA Minimax, Kocsis--Szepesv\'ari UCT, Browne et al. MCTS); \href{https://python-chess.readthedocs.io/en/latest/core.html}{python-chess core documentation}, accessed October 14, 2026.}
+I assumed no castling or en-passant rights, clock zero and no earlier repetition history. All six relevant Black castling-right alternatives for cases 1 and 4 preserved the verified moves. Other diagrams permit neither castling nor immediate en-passant. Historical clocks and optional draw claims are outside this experiment.
+
+I preserved the September baseline. The separate branch includes code, FENs, individual runtimes, search counts, raw logs, proof trees and reproduction commands.
+
+{\small\textbf{Repository:} \href{https://github.com/ak23bar/murl-chess/tree/october14-corrected-positions}{ak23bar/murl-chess: october14-corrected-positions}.\\
+\textbf{References:} Corrected \texttt{Positions2.pdf}, four pages; September baseline and \texttt{references.bib} (AIMA Minimax, Kocsis--Szepesv\'ari UCT, Browne et al. MCTS); \href{https://python-chess.readthedocs.io/en/latest/core.html}{python-chess core documentation}, accessed October 14, 2026.}
 \end{document}

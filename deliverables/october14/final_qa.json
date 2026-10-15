@@ -5,7 +5,7 @@
   "tests_passed": 16,
   "pdf_pages": 2,
   "pdf_rendered_with": "pdftoppm",
-  "pdf_visual_review": "Both final pages inspected: no clipping, overlapping text or missing table rows",
+  "pdf_visual_review": "Both revised pages inspected: no clipping, overlapping text or missing table rows",
   "pdf_keys_and_aggregate_counts_checked": true,
   "compile_success": true,
   "overfull_boxes": false,
@@ -30,5 +30,6 @@
   "email_sent": false,
   "human_review": "See AUDIT_CHECKLIST.md; recipient addresses and send approval remain for user",
   "archive": "MURL_Chess_Oct14_2026_Review_Package.zip",
-  "archive_verification": "package.py checks ZIP CRC and SHA-256 for every payload; external output/package_integrity.json records the final ZIP checksum"
+  "archive_verification": "package.py checks ZIP CRC and SHA-256 for every payload; external output/package_integrity.json records the final ZIP checksum",
+  "report_revision": "First-person report titled for October 14, 2026, with plain-language explanations; measured results unchanged"
 }
