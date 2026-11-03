@@ -1,0 +1,5 @@
+cap,method,n,returned_hits,completed,completed_hits,median_seconds,median_iterations
+0.25,minimax,20,4,4,1,0.2501,
+0.25,mcts,60,3,0,0,0.2502,90.0
+1.0,minimax,20,5,15,5,0.5286,
+1.0,mcts,60,6,0,0,1.0002,341.0

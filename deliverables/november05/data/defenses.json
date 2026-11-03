@@ -1,0 +1,53 @@
+[
+  {
+    "id": 6,
+    "fen": "7k/3Q2pp/4r3/8/8/8/3r3P/6K1 w - - 0 1",
+    "source": "mcts_seed0_move",
+    "returned": "Qxe6",
+    "defense": "Rd8",
+    "key": "Qc8+",
+    "correct": [
+      "Qc8+",
+      "Rd8",
+      "Qxd8+",
+      "Re8",
+      "Qxe8#"
+    ],
+    "remaining_attacker_plies": 3,
+    "winning_moves": []
+  },
+  {
+    "id": 13,
+    "fen": "2n4k/3R4/3p4/8/4N3/8/8/3nK3 w - - 0 1",
+    "source": "minimax_3_move",
+    "returned": "Kxd1",
+    "defense": "Kg8",
+    "key": "Nf6",
+    "correct": [
+      "Nf6",
+      "Ne7",
+      "Rxe7",
+      "Ne3",
+      "Rh7#"
+    ],
+    "remaining_attacker_plies": 3,
+    "winning_moves": []
+  },
+  {
+    "id": 16,
+    "fen": "7k/1P6/6p1/8/8/6K1/8/5R2 w - - 0 1",
+    "source": "minimax_3_move",
+    "returned": "Kg4",
+    "defense": "Kg8",
+    "key": "Rf7",
+    "correct": [
+      "Rf7",
+      "Kg8",
+      "Rd7",
+      "g5",
+      "b8=Q#"
+    ],
+    "remaining_attacker_plies": 3,
+    "winning_moves": []
+  }
+]

@@ -1,0 +1,3 @@
+*.html -text
+*.zip -text
+*.pdf -text
