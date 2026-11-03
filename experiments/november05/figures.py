@@ -1,4 +1,4 @@
-"""Build poster figures from the archived calls and verified defenses."""
+"""I build my poster figures from the recorded calls and verified defenses."""
 import csv
 import json
 from pathlib import Path

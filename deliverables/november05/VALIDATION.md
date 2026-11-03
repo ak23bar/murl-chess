@@ -1,5 +1,7 @@
 # Validation record · November 3, 2026
 
+I used the following checks to verify my data and prepare the material for our group.
+
 | Check | Observed result |
 |---|---|
 | Baseline regression suite | All 16 tests passed. |
@@ -12,4 +14,4 @@
 | November design | All 160 scheduled position/ceiling/method/seed combinations occurred exactly once. Verified move legality, key flags, effort, MCTS iteration completion, and the four-condition summary. |
 | Publication | Both Mermaid blocks parsed and rendered to SVG. Relative links in the project, reports, poster, and source guides resolved. Vector figures parsed, the supplied template ZIP passed integrity checks, and all eight original source hashes matched. The final five-page report was rendered and inspected. |
 
-Use the [README reproduction commands](../../README.md#reproduce-the-checks) to audit or rerun the evidence. A repeat of a wall-clock experiment can change the work completed before a timeout.
+I have included the [reproduction commands](../../README.md#reproduce-the-checks) for the group to audit or repeat my checks. A repeat of my timing experiment can change the work completed before timeout. After reviewing our email chain and transcript, I revised the current narrative into first person, added my Google Doc and PDF summary, and checked both final PDF layouts. I retained my original submitted PDFs and measured data.

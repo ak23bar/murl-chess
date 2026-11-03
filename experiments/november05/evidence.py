@@ -1,4 +1,4 @@
-"""Replay the supplied solution pages and archived strategy certificates."""
+"""I replay the supplied solutions and check my archived strategy certificates."""
 import argparse
 import csv
 import json

@@ -1,4 +1,4 @@
-"""Repeat exact root checks and selected deterministic searches independently of timings."""
+"""I repeat exact root checks and seeded searches separately from my timing runs."""
 import csv
 import json
 from pathlib import Path

@@ -2,13 +2,13 @@
 
 Fall 2026 · University of Illinois Chicago · MATH 496
 
-On 20 course-supplied chess problems, how quickly do Minimax and Monte Carlo tree search (MCTS) return a move, how often is it the unique key to mate in three, and what goes wrong when they miss it? This repository contains Akbar Aman's experimental contribution to the group poster coordinated by La Min Aung.
+I investigated how quickly Minimax and Monte Carlo tree search (MCTS) return a move on 20 course-supplied problems, how often they select the unique key to mate in three, and what happens when they miss it. I am sharing my measurements, code, and analysis with our group for the poster coordinated by La Min Aung.
 
-**[Read the comprehensive report](Reports/MURL_Chess_Research.pdf)** · **[Open the poster handoff](deliverables/november05/README.md)** · **[Browse all three reports](Reports/README.md)**
+**[My concise group findings](Reports/MURL_Chess_Group_Findings.pdf)** · **[Google Doc](https://docs.google.com/document/d/10VYO_vFpFaVLsv9ceS01ASPTvwlAWUAKpZGiy-NSOWQ)** · **[Comprehensive report](Reports/MURL_Chess_Research.pdf)** · **[All reports](Reports/README.md)**
 
 ### Where to start
 
-| If you need… | Open… |
+| Material I am sharing | Location |
 |---|---|
 | A figure or paragraph for the group poster | [Poster handoff with captions and editable vector figures](deliverables/november05/README.md) |
 | The original submissions | [September 23 PDF](Reports/MURL_report_9_23.pdf) · [October 14 PDF](Reports/MURL_Report_10_14.pdf) |
@@ -18,9 +18,9 @@ On 20 course-supplied chess problems, how quickly do Minimax and Monte Carlo tre
 
 ## RQ1 · Execution time
 
-September measured eight varied boards. At depth three, two positions with 16 pieces took 0.087 and 3.586 seconds at the median. The first had 15 legal first moves and 2,978 visited nodes; the second had 53 moves and 123,342 nodes. Piece count alone concealed a large difference in work. [September measurements](results/summary.csv)
+In September, I measured eight varied boards. At depth three, two positions with 16 pieces took 0.087 and 3.586 seconds at the median. I recorded 15 legal first moves and 2,978 visited nodes for the first, versus 53 moves and 123,342 nodes for the second. I found that piece count alone concealed a large difference in work. [My September measurements](results/summary.csv)
 
-October tested the same corrected 20 puzzles for both algorithms, with a safety limit of 20 s per call.
+In October, I tested both algorithms on the same corrected 20 puzzles, with a safety limit of 20 s per call.
 
 | October workload | Calls finished | Key hits among finished | Median seconds among finished |
 |---|---:|---:|---:|
@@ -30,11 +30,11 @@ October tested the same corrected 20 puzzles for both algorithms, with a safety 
 
 ![October wall time by puzzle with separate markers for 5-ply timeouts](deliverables/november05/figures/runtime.png)
 
-Five-ply Minimax finished on puzzles 16 and 18. Eighteen calls timed out. Eight timeout moves matched the key, but their full-depth runtime is unknown. A shared safety ceiling does not make fixed-depth and fixed-iteration workloads equal.
+My five-ply Minimax runs finished on puzzles 16 and 18. I stopped eighteen calls at the time limit. Eight timeout moves matched the key, while their full-depth runtime remains unknown. I interpret these measurements within their different requested workloads.
 
 ## RQ2 · Which first moves were accurate?
 
-A **key** is a move that forces checkmate against every legal defense within five plies. Matching the key scores one correct first decision. Solving the continuation requires separate evidence. Three-ply Minimax matched six keys. Each MCTS seed matched three, with five distinct puzzles hit across the seeds. All 20 printed first moves agree with the exact search.
+I define a **key** as a move that forces checkmate against every legal defense within five plies. I score agreement with that key as a correct first decision and verify the continuation separately. I recorded six matches for three-ply Minimax and three for each MCTS seed, with five distinct puzzles hit across the seeds. I also checked that all 20 printed first moves agree with my exact search.
 
 ```mermaid
 flowchart LR
@@ -48,9 +48,9 @@ flowchart LR
   E --> H
 ```
 
-The exact verifier tries every legal first move. At attacker nodes one winning continuation suffices; at defender nodes every legal reply must permit the mate. All 20 positions have a unique five-ply key and no shorter forced mate. The verifier and both search programs share python-chess for legality. [Verifier code](experiments/october14/oracle.py) · [Strategy certificates](deliverables/october14/results/mate_certificates.json)
+I used an exact verifier that tries every legal first move. One winning continuation suffices at attacker nodes, while every legal reply must permit the mate at defender nodes. I found a unique five-ply key and no shorter forced mate in all 20 positions. My verifier and both search programs share python-chess for legality. [My verifier](experiments/october14/oracle.py) · [Strategy certificates](deliverables/october14/results/mate_certificates.json)
 
-**Position 18.** After **Rxg7 Kf8 Ne6+ Ke8**, the printed **c8=R#** and October sample **c8=Q#** both checkmate. The printed explanation that a queen stalemates is incorrect on the supplied board. Bishop and knight promotions do stalemate. Across all 20 puzzles, 13 printed lines differ from the stored sample but every printed line legally ends in mate. [Move-by-move audit](deliverables/november05/data/solutions.json)
+**My position 18 check.** After **Rxg7 Kf8 Ne6+ Ke8**, I verified that the printed **c8=R#** and my October sample **c8=Q#** both checkmate. The booklet's queen-stalemate explanation is incorrect on this board. I found stalemate after bishop and knight promotion. Across all 20 puzzles, I replayed 13 printed lines that differ from my sample, and every printed line legally ended in mate. [My move-by-move audit](deliverables/november05/data/solutions.json)
 
 ## RQ3 · Why did the search miss the mate?
 
@@ -62,7 +62,7 @@ The exact verifier tries every legal first move. At attacker nodes one winning c
 | 13 · rook lift | **Kxd1**, three-ply Minimax and all MCTS seeds | **Nf6** | **...Kg8** prevents mate within the remaining horizon. |
 | 16 · promotion | **Kg4**, three-ply Minimax | **Rf7** | **...Kg8** defeats the short mate. Five-ply Minimax finished in 10.012 s and selected Rf7. |
 
-For puzzle 6, seed 0 visited Qxe6 **88** times and Qc8+ **56** times. MCTS returns the most visited root move. Of its 1,000 rollouts, 881 reached the evaluation cutoff. This explains the final choice under the recorded policy. A different reward or rollout policy would require a separate intervention to establish its effect. [Defensive witnesses](deliverables/november05/data/defenses.json) · [Raw visits and scores](deliverables/october14/results/run1/raw.jsonl)
+For puzzle 6, I recorded **88** visits to Qxe6 and **56** to Qc8+ at seed 0. My MCTS implementation returns the most visited root move. Of its 1,000 rollouts, 881 reached the evaluation cutoff. I can explain the final choice from these records. I would need a separate intervention to establish the effect of changing the reward or rollout policy. [My defensive witnesses](deliverables/november05/data/defenses.json) · [Raw visits and scores](deliverables/october14/results/run1/raw.jsonl)
 
 ```mermaid
 flowchart TD
@@ -76,18 +76,18 @@ flowchart TD
 
 ### November sensitivity experiment
 
-Every puzzle received both time ceilings. Plain Minimax targeted three plies. MCTS targeted 100,000 iterations, with a 40-ply rollout cap, so the clock determined the usable sample. All 160 calls ran serially in shuffled order (seed 496). This comparison scores the decision actually available at the deadline. Minimax can finish early, and partial searches may return the best finished branch or first legal fallback.
+I applied both time ceilings to every puzzle. I requested three plies for plain Minimax and 100,000 iterations for MCTS, with a 40-ply rollout cap, so the clock determined its usable sample. I ran all 160 calls serially in shuffled order with seed 496 and scored the decision available at the deadline. My Minimax code can finish early and returns its best finished branch or first legal fallback on timeout.
 
 | Ceiling | Minimax returned keys | Minimax finished | MCTS returned keys | Median MCTS simulations |
 |---|---:|---:|---:|---:|
 | 0.25 s | 4/20 | 4/20 | 3/60 | 90 |
 | 1.00 s | 5/20 | 15/20 | 6/60 | 341 |
 
-One of the four finished short-ceiling Minimax calls matched the key. At one second five of 15 finished calls matched. All MCTS calls stopped before the requested iteration target. Time limits are shared ceilings, not identical realized runtimes. [Raw decisions](deliverables/november05/data/budget.csv) · [Machine and versions](deliverables/november05/data/environment.json)
+I recorded one key match among the four finished short-ceiling Minimax calls and five among the 15 finished one-second calls. Every MCTS call stopped before its requested target. I used shared ceilings while allowing actual elapsed times to differ. [My raw decisions](deliverables/november05/data/budget.csv) · [Machine and versions](deliverables/november05/data/environment.json)
 
 ## Reproduce the checks
 
-From the repository root, create and activate a Python 3.12 environment. Install the search, plotting, and source-audit dependencies.
+I used Python 3.12 and the pinned dependencies below. The following commands reproduce my checks from the repository root.
 
 ```sh
 python -m venv .venv
@@ -101,7 +101,7 @@ python -m experiments.november05.replay
 python -m experiments.november05.summary deliverables/november05/data
 ```
 
-The October audit verifies source hashes, all 1,280 board squares, raw records, legal moves, root coverage, and completion flags. The November source audit reads the printed solution pages, checks all certificates, compares the two position 18 promotions, and computes a defensive witness for each featured error.
+My October audit verifies source hashes, all 1,280 board squares, raw records, legal moves, root coverage, and completion flags. My November audit reads the printed solutions, checks the certificates, compares the position 18 promotions, and computes a defensive witness for each featured error.
 
 ```sh
 # Use fresh output directories for new timing runs.
@@ -125,6 +125,6 @@ The October full run includes 60 verifier calls and 100 algorithm calls. Use the
 | [September results](results/) · [September source](report/) | Eight-board measurements and original report build |
 | [References](references.bib) | Algorithm and software sources |
 
-These are selected mate-in-three compositions with one Black-to-move position. Root mobility describes one layer of the search tree. Three seeds are repeated trials on the same positions. Hardware, clock checks, fallback ordering, and the material evaluation affect behavior. No tournament-strength ranking or group-wide consensus follows from this contribution.
+I tested selected mate-in-three compositions with one Black-to-move position. I use root mobility to describe one layer and interpret the three seeds as repeated trials on the same boards. Hardware, clock checks, fallback ordering, and material evaluation affect my results. I limit my conclusions to this experimental scope.
 
-The historical September and October measurements are preserved. The November work adds a source cross-check, a new experiment, and a synthesis for the group's Nov 5 findings deadline.
+I have retained my dated September and October artifacts and added the November source checks, experiment, and synthesis for our Nov 5 handoff. I describe the tools and sources I used in my [preparation and provenance note](docs/provenance.md).

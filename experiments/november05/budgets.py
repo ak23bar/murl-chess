@@ -1,4 +1,4 @@
-"""Compare returned decisions at two shared wall-clock ceilings, in serial."""
+"""I compare returned decisions at two shared wall-clock ceilings, in serial."""
 import argparse
 import csv
 import json

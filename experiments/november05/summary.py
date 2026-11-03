@@ -1,4 +1,4 @@
-"""Validate the full paired design and tabulate returned-key utility."""
+"""I validate my paired design and summarize keys returned at each time ceiling."""
 import argparse
 import csv
 from pathlib import Path

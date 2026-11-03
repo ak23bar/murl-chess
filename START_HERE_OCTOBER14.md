@@ -1,6 +1,6 @@
 # October 14 MURL deliverable
 
-This is the new corrected 20-position experiment. The root README.md and report/ still describe the preserved September 23 baseline.
+I used the corrected 20-position set for my October experiment. I have since consolidated my September and October findings, new checks, and poster materials in the [current README](README.md) and [Reports folder](Reports/README.md). The links below retain my dated October materials.
 
 - [October report](deliverables/october14/report.pdf)
 - [Results summary](deliverables/october14/RESULTS_SUMMARY.md)
@@ -9,4 +9,4 @@ This is the new corrected 20-position experiment. The root README.md and report/
 - [Unsent email draft](deliverables/october14/email_draft.md)
 - [Speaking notes](deliverables/october14/meeting_notes.md)
 
-All 20 positions verified; Minimax-3 key matches 6/20; MCTS key matches 9/60; Minimax-5 completed 2/20 with 18 timeouts. Prepared with Codex assistance for Akbar's review. No email sent.
+I verified all 20 positions and recorded 6/20 keys for Minimax at three plies, 9/60 for MCTS, and 2/20 completed five-ply Minimax searches with 18 timeouts. I describe my tool assistance in the [provenance note](docs/provenance.md).
